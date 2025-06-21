@@ -1,0 +1,12 @@
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\bin\Debug\net8.0\FUMiniHotelSystem.DAL.deps.json
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\bin\Debug\net8.0\FUMiniHotelSystem.DAL.dll
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\bin\Debug\net8.0\FUMiniHotelSystem.DAL.pdb
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.AssemblyInfoInputs.cache
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.AssemblyInfo.cs
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.csproj.CoreCompileInputs.cache
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.sourcelink.json
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.dll
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\refint\FUMiniHotelSystem.DAL.dll
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\FUMiniHotelSystem.DAL.pdb
+D:\Specialization5\Off\PRN212\PE\TranVanTung_SE18D05_A01\FUMiniHotelSystem.DAL\obj\Debug\net8.0\ref\FUMiniHotelSystem.DAL.dll
