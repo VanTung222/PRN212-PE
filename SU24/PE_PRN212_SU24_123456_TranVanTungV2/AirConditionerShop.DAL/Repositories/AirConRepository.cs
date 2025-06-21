@@ -30,5 +30,23 @@ namespace AirConditionerShop.DAL.Repositories
             _context.SaveChanges(); //lưu xuống database
         }
 
+        public void Update(AirConditioner x)
+        {
+            _context = new();
+            _context.AirConditioners.Update(x);
+            _context.SaveChanges(); //lưu xuống database
+        }
+
+        public void Delete(int id)
+        {
+            _context = new();
+            var airCon = _context.AirConditioners.Find(id);
+            if (airCon != null)
+            {
+                _context.AirConditioners.Remove(airCon);
+                _context.SaveChanges(); //lưu xuống database
+            }
+        }
+
     }
 }

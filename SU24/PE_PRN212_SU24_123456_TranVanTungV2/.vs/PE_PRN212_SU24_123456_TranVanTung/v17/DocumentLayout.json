@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9960FF4-78D3-411E-8316-8A7D2A118A5D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.bll\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9960FF4-78D3-411E-8316-8A7D2A118A5D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|solutionrelative:airconditionershop.bll\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,12 +15,40 @@
       "RelativeMoniker": "D:0:0:{E9960FF4-78D3-411E-8316-8A7D2A118A5D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|solutionrelative:airconditionershop.bll\\services\\airconservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\airconditionershop_tranvantung.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\airconditionershop_tranvantung.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9960FF4-78D3-411E-8316-8A7D2A118A5D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.bll\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9960FF4-78D3-411E-8316-8A7D2A118A5D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|solutionrelative:airconditionershop.bll\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\repositories\\airconrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\repositories\\airconrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\airconditionershop2024dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\airconditionershop2024dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\entities\\airconditioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\entities\\airconditioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -45,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop_tranvantung\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0A15508F-DDA7-43BE-A71E-5997DD0D9246}|AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj|solutionrelative:airconditionershop_tranvantung\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6D1868F-61BC-4B3C-AF5B-F10660AAF2CE}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\su24\\pe_prn212_su24_123456_tranvantungv2\\airconditionershop.dal\\airconditionershop.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -65,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -89,71 +97,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SupplierService.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\SupplierService.cs",
-              "RelativeDocumentMoniker": "AirConditionerShop.BLL\\Services\\SupplierService.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\SupplierService.cs",
-              "RelativeToolTip": "AirConditionerShop.BLL\\Services\\SupplierService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T16:07:59.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "detailWindow.xaml",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml",
-              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\detailWindow.xaml",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml",
-              "RelativeToolTip": "AirConditionerShop_TranVanTung\\detailWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-20T14:50:59.532Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "detailWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
-              "RelativeToolTip": "AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAmwDEAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T15:38:04.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SupplierRepository.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
-              "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
-              "RelativeToolTip": "AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T16:07:36.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\MainWindow.xaml.cs",
               "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\MainWindow.xaml.cs",
               "RelativeToolTip": "AirConditionerShop_TranVanTung\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAQwDgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAQwGMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T14:53:47.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\MainWindow.xaml",
@@ -165,46 +122,134 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AirConRepository.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
-              "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
-              "RelativeToolTip": "AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBkAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T14:35:19.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AirConService.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\AirConService.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.BLL\\Services\\AirConService.cs",
               "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\AirConService.cs",
               "RelativeToolTip": "AirConditionerShop.BLL\\Services\\AirConService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwCIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T14:44:33.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "detailWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
+              "RelativeToolTip": "AirConditionerShop_TranVanTung\\detailWindow.xaml.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAYwEoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T15:38:04.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "detailWindow.xaml",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml",
+              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\detailWindow.xaml",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\detailWindow.xaml",
+              "RelativeToolTip": "AirConditionerShop_TranVanTung\\detailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-20T14:50:59.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\LoginWindow.xaml",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\LoginWindow.xaml",
+              "RelativeToolTip": "AirConditionerShop_TranVanTung\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-20T15:04:57.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AirConditionerShop_TranVanTung",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj",
+              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj",
+              "RelativeToolTip": "AirConditionerShop_TranVanTung\\AirConditionerShop_TranVanTung.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-21T07:23:02.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SupplierService.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\SupplierService.cs",
+              "RelativeDocumentMoniker": "AirConditionerShop.BLL\\Services\\SupplierService.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.BLL\\Services\\SupplierService.cs",
+              "RelativeToolTip": "AirConditionerShop.BLL\\Services\\SupplierService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T16:07:59.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "AirConRepository.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
+              "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
+              "RelativeToolTip": "AirConditionerShop.DAL\\Repositories\\AirConRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T14:35:19.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AirConditionerShop2024DbContext.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\AirConditionerShop2024DbContext.cs",
+              "RelativeDocumentMoniker": "AirConditionerShop.DAL\\AirConditionerShop2024DbContext.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\AirConditionerShop2024DbContext.cs",
+              "RelativeToolTip": "AirConditionerShop.DAL\\AirConditionerShop2024DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T07:23:21.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "AirConditioner.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
               "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
               "RelativeToolTip": "AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T15:00:18.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
+              "Title": "SupplierRepository.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
+              "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
+              "RelativeToolTip": "AirConditionerShop.DAL\\Repositories\\SupplierRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T16:07:36.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\appsettings.json",
               "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\appsettings.json",
@@ -212,23 +257,11 @@
               "RelativeToolTip": "AirConditionerShop_TranVanTung\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-20T15:18:45.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T15:18:45.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\LoginWindow.xaml",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\LoginWindow.xaml",
-              "RelativeToolTip": "AirConditionerShop_TranVanTung\\LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-20T15:04:57.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AirConditionerShop.DAL.csproj",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
@@ -236,11 +269,12 @@
               "RelativeToolTip": "AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-20T14:32:32.128Z"
+              "WhenOpened": "2025-06-20T14:32:32.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\SU24\\PE_PRN212_SU24_123456_TranVanTungV2\\AirConditionerShop_TranVanTung\\App.xaml",
               "RelativeDocumentMoniker": "AirConditionerShop_TranVanTung\\App.xaml",
@@ -252,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "v3qvjb2g..sql",
               "DocumentMoniker": "C:\\Users\\admin\\AppData\\Local\\Temp\\v3qvjb2g..sql",
               "ToolTip": "C:\\Users\\admin\\AppData\\Local\\Temp\\v3qvjb2g..sql",
