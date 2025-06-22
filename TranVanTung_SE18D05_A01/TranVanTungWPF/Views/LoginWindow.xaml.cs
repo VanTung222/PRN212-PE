@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TranVanTungWPF.ViewModels;
+using FUMiniHotelSystem.BLL.Services;
+using FUMiniHotelSystem.DAL.Repositories;
 
 namespace TranVanTungWPF.Views
 {
@@ -20,7 +12,25 @@ namespace TranVanTungWPF.Views
         public LoginWindow()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+
+            // Setup configuration
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            // Setup services
+            var customerRepository = new CustomerRepository();
+            var customerService = new CustomerService(customerRepository);
+
+            DataContext = new LoginViewModel(customerService, configuration);
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LoginViewModel viewModel)
+            {
+                viewModel.Password = ((PasswordBox)sender).Password;
+            }
         }
     }
 }

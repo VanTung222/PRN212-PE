@@ -1,52 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.BLL.Services;
+﻿using FUMiniHotelSystem.BLL.Services;
 using FUMiniHotelSystem.DAL.Models;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using TranVanTungWPF.Views;
+using TranVanTungWPF.Commands;
 
 namespace TranVanTungWPF.ViewModels
 {
-    public class CustomerViewModel : INotifyPropertyChanged
+    public class CustomerViewModel : BaseViewModel
     {
         private readonly ICustomerService _customerService;
         private Customer _customer;
 
+        public CustomerViewModel(Customer customer, ICustomerService customerService)
+        {
+            _customer = customer;
+            _customerService = customerService;
+
+            UpdateProfileCommand = new RelayCommand(ExecuteUpdateProfile);
+        }
+
         public Customer Customer
         {
             get => _customer;
-            set { _customer = value; OnPropertyChanged(nameof(Customer)); }
+            set => SetProperty(ref _customer, value);
         }
 
         public ICommand UpdateProfileCommand { get; }
 
-        public CustomerViewModel(Customer customer)
+        private void ExecuteUpdateProfile(object? parameter)
         {
-            _customerService = new CustomerService();
-            Customer = customer;
-            UpdateProfileCommand = new RelayCommand(_ => UpdateProfile());
-        }
-
-        private void UpdateProfile()
-        {
-            var dialog = new CustomerDialog(Customer);
-            if (dialog.ShowDialog() == true)
+            var dialog = new Views.CustomerDialog(Customer);
+            if (dialog.ShowDialog() == true && dialog.Customer != null)
             {
-                _customerService.UpdateCustomer(dialog.Customer);
-                Customer = _customerService.GetCustomerById(dialog.Customer.CustomerID);
-                MessageBox.Show("Profile updated successfully.");
+                if (_customerService.UpdateCustomer(dialog.Customer))
+                {
+                    Customer = dialog.Customer;
+                    MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update profile. Please check the information.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

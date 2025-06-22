@@ -1,82 +1,74 @@
-﻿using System;
+﻿using FUMiniHotelSystem.DAL.Data;
+using FUMiniHotelSystem.DAL.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.DAL.Models;
-
 
 namespace FUMiniHotelSystem.DAL.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private readonly List<Customer> _customers;
-        private static CustomerRepository _instance;
+        private readonly DataContext _context;
 
-        private CustomerRepository()
+        public CustomerRepository()
         {
-            _customers = new List<Customer>
+            _context = DataContext.Instance;
+        }
+
+        public IEnumerable<Customer> GetAll()
+        {
+            return _context.Customers.Where(c => c.CustomerStatus == 1).OrderByDescending(c => c.CustomerID);
+        }
+
+        public Customer? GetById(int id)
+        {
+            return _context.Customers.FirstOrDefault(c => c.CustomerID == id && c.CustomerStatus == 1);
+        }
+
+        public Customer? GetByEmail(string email)
+        {
+            return _context.Customers.FirstOrDefault(c => c.EmailAddress == email && c.CustomerStatus == 1);
+        }
+
+        public void Add(Customer customer)
+        {
+            customer.CustomerID = _context.GetNextCustomerId();
+            customer.CustomerStatus = 1;
+            _context.Customers.Add(customer);
+        }
+
+        public void Update(Customer customer)
+        {
+            var existingCustomer = _context.Customers.FirstOrDefault(c => c.CustomerID == customer.CustomerID);
+            if (existingCustomer != null)
             {
-                new Customer { CustomerID = 1, CustomerFullName = "John Doe", Telephone = "1234567890", EmailAddress = "john@example.com", CustomerBirthday = new DateTime(1990, 1, 1), CustomerStatus = 1, Password = "password123" }
-            };
-        }
-
-        public static CustomerRepository Instance
-        {
-            get => _instance ??= new CustomerRepository(); // Singleton Pattern
-        }
-
-        public void AddCustomer(Customer customer)
-        {
-            customer.CustomerID = _customers.Any() ? _customers.Max(c => c.CustomerID) + 1 : 1;
-            _customers.Add(customer);
-        }
-
-        public void UpdateCustomer(Customer customer)
-        {
-            var existing = _customers.FirstOrDefault(c => c.CustomerID == customer.CustomerID);
-            if (existing != null)
-            {
-                existing.CustomerFullName = customer.CustomerFullName;
-                existing.Telephone = customer.Telephone;
-                existing.EmailAddress = customer.EmailAddress;
-                existing.CustomerBirthday = customer.CustomerBirthday;
-                existing.CustomerStatus = customer.CustomerStatus;
-                existing.Password = customer.Password;
+                existingCustomer.CustomerFullName = customer.CustomerFullName;
+                existingCustomer.Telephone = customer.Telephone;
+                existingCustomer.EmailAddress = customer.EmailAddress;
+                existingCustomer.CustomerBirthday = customer.CustomerBirthday;
+                existingCustomer.Password = customer.Password;
             }
         }
 
-        public void DeleteCustomer(int customerId)
+        public void Delete(int id)
         {
-            var customer = _customers.FirstOrDefault(c => c.CustomerID == customerId);
+            var customer = _context.Customers.FirstOrDefault(c => c.CustomerID == id);
             if (customer != null)
+            {
                 customer.CustomerStatus = 2; // Soft delete
+            }
         }
 
-        public Customer GetCustomerById(int customerId)
+        public IEnumerable<Customer> Search(string searchTerm)
         {
-            return _customers.FirstOrDefault(c => c.CustomerID == customerId && c.CustomerStatus == 1);
-        }
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return GetAll();
 
-        public Customer GetCustomerByEmail(string email)
-        {
-            return _customers.FirstOrDefault(c => c.EmailAddress == email && c.CustomerStatus == 1);
-        }
-
-        public List<Customer> GetAllCustomers()
-        {
-            return _customers.Where(c => c.CustomerStatus == 1).ToList();
-        }
-
-        public List<Customer> SearchCustomers(string searchTerm)
-        {
-            if (string.IsNullOrEmpty(searchTerm))
-                return GetAllCustomers();
-            return _customers
+            return _context.Customers
                 .Where(c => c.CustomerStatus == 1 &&
-                            (c.CustomerFullName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                             c.EmailAddress.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
-                .ToList();
+                           (c.CustomerFullName.Contains(searchTerm) ||
+                            c.EmailAddress.Contains(searchTerm) ||
+                            c.Telephone.Contains(searchTerm)))
+                .OrderByDescending(c => c.CustomerID);
         }
     }
 }

@@ -1,23 +1,17 @@
-﻿using System;
+﻿using FUMiniHotelSystem.DAL.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.DAL.Models;
 
 namespace FUMiniHotelSystem.BLL.Services
 {
     public interface IRoomService
     {
-        void AddRoom(RoomInformation room);
-        void UpdateRoom(RoomInformation room);
-        void DeleteRoom(int roomId);
-        RoomInformation GetRoomById(int roomId);
-        List<RoomInformation> GetAllRooms();
-        List<RoomInformation> SearchRooms(string searchTerm);
-        List<RoomType> GetAllRoomTypes();
+        IEnumerable<RoomInformation> GetAllRooms();
+        RoomInformation? GetRoomById(int id);
+        bool AddRoom(RoomInformation room);
+        bool UpdateRoom(RoomInformation room);
+        bool DeleteRoom(int id);
+        IEnumerable<RoomInformation> SearchRooms(string searchTerm);
+        IEnumerable<RoomType> GetAllRoomTypes();
         bool ValidateRoom(RoomInformation room, out List<string> errors);
-        void AddRoom(object room);
-        void UpdateRoom(object room);
     }
 }

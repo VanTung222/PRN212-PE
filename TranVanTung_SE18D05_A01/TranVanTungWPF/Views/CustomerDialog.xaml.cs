@@ -1,92 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using FUMiniHotelSystem.DAL.Models;
 using FUMiniHotelSystem.BLL.Services;
-using FUMiniHotelSystem.DAL.Models;
-using System.ComponentModel;
-using TranVanTungWPF.ViewModels;
+using FUMiniHotelSystem.DAL.Repositories;
 
 namespace TranVanTungWPF.Views
 {
     public partial class CustomerDialog : Window
     {
-        public class CustomerDialogViewModel : INotifyPropertyChanged
+        private readonly ICustomerService _customerService;
+        public Customer? Customer { get; private set; }
+
+        public CustomerDialog()
         {
-            private readonly ICustomerService _customerService;
-            private Customer _customer;
-            private string _errorMessage;
+            InitializeComponent();
+            var customerRepository = new CustomerRepository();
+            _customerService = new CustomerService(customerRepository);
+            BirthdayDatePicker.SelectedDate = DateTime.Now.AddYears(-18);
+        }
 
-            public Customer Customer
+        public CustomerDialog(Customer customer) : this()
+        {
+            Customer = customer;
+            LoadCustomerData();
+        }
+
+        private void LoadCustomerData()
+        {
+            if (Customer != null)
             {
-                get => _customer;
-                set { _customer = value; OnPropertyChanged(nameof(Customer)); }
-            }
-
-            public string ErrorMessage
-            {
-                get => _errorMessage;
-                set { _errorMessage = value; OnPropertyChanged(nameof(ErrorMessage)); }
-            }
-
-            public string Title => Customer.CustomerID == 0 ? "Add Customer" : "Edit Customer";
-
-            public ICommand SaveCommand { get; }
-            public ICommand CancelCommand { get; }
-
-            public CustomerDialogViewModel(Customer customer)
-            {
-                _customerService = new CustomerService();
-                Customer = customer != null ? new Customer
-                {
-                    CustomerID = customer.CustomerID,
-                    CustomerFullName = customer.CustomerFullName,
-                    Telephone = customer.Telephone,
-                    EmailAddress = customer.EmailAddress,
-                    CustomerBirthday = customer.CustomerBirthday,
-                    CustomerStatus = customer.CustomerStatus,
-                    Password = customer.Password
-                } : new Customer { CustomerStatus = 1 };
-                SaveCommand = new RelayCommand(ExecuteSave);
-                CancelCommand = new RelayCommand(_ => ((Window)Application.Current.Windows.OfType<CustomerDialog>().First()).DialogResult = false);
-            }
-
-            private void ExecuteSave(object parameter)
-            {
-                Customer.Password = parameter as string;
-                if (_customerService.ValidateCustomer(Customer, out var errors))
-                {
-                    ((Window)Application.Current.Windows.OfType<CustomerDialog>().First()).DialogResult = true;
-                }
-                else
-                {
-                    ErrorMessage = string.Join("\n", errors);
-                }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-            protected void OnPropertyChanged(string propertyName)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                FullNameTextBox.Text = Customer.CustomerFullName;
+                EmailTextBox.Text = Customer.EmailAddress;
+                TelephoneTextBox.Text = Customer.Telephone;
+                BirthdayDatePicker.SelectedDate = Customer.CustomerBirthday;
+                PasswordBox.Password = Customer.Password;
             }
         }
 
-        public Customer Customer => ((CustomerDialogViewModel)DataContext).Customer;
-
-        public CustomerDialog(Customer customer)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            DataContext = new CustomerDialogViewModel(customer);
+            try
+            {
+                var customer = new Customer
+                {
+                    CustomerID = Customer?.CustomerID ?? 0,
+                    CustomerFullName = FullNameTextBox.Text.Trim(),
+                    EmailAddress = EmailTextBox.Text.Trim(),
+                    Telephone = TelephoneTextBox.Text.Trim(),
+                    CustomerBirthday = BirthdayDatePicker.SelectedDate ?? DateTime.Now,
+                    Password = PasswordBox.Password,
+                    CustomerStatus = 1
+                };
+
+                if (_customerService.ValidateCustomer(customer, out var errors))
+                {
+                    Customer = customer;
+                    DialogResult = true;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(string.Join("\n", errors), "Validation Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
         }
     }
 }

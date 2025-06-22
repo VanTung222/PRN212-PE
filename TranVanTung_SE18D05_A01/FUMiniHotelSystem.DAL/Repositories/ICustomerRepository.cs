@@ -1,20 +1,16 @@
-﻿using System;
+﻿using FUMiniHotelSystem.DAL.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.DAL.Models;
 
 namespace FUMiniHotelSystem.DAL.Repositories
 {
     public interface ICustomerRepository
     {
-        void AddCustomer(Customer customer);
-        void UpdateCustomer(Customer customer);
-        void DeleteCustomer(int customerId);
-        Customer GetCustomerById(int customerId);
-        Customer GetCustomerByEmail(string email);
-        List<Customer> GetAllCustomers();
-        List<Customer> SearchCustomers(string searchTerm);
+        IEnumerable<Customer> GetAll();
+        Customer? GetById(int id);
+        Customer? GetByEmail(string email);
+        void Add(Customer customer);
+        void Update(Customer customer);
+        void Delete(int id);
+        IEnumerable<Customer> Search(string searchTerm);
     }
 }

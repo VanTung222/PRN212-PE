@@ -1,120 +1,91 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.BLL.Services;
-using FUMiniHotelSystem.DAL.Models;
-using System.ComponentModel;
+﻿using Microsoft.Extensions.Configuration;
 using System.Windows;
 using System.Windows.Input;
-using TranVanTungWPF.Views;
-using Microsoft.Extensions.Configuration;
-using System.IO;
-using FluentNHibernate;
+using TranVanTungWPF.Commands;
+using TranVanTungWPF.Models;
+using FUMiniHotelSystem.BLL.Services;
 
 namespace TranVanTungWPF.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : BaseViewModel
     {
         private readonly ICustomerService _customerService;
-        private string _email;
-        private string _password;
-        private string _errorMessage;
+        private readonly IConfiguration _configuration;
+        private string _email = string.Empty;
+        private string _password = string.Empty;
+        private string _errorMessage = string.Empty;
+
+        public LoginViewModel(ICustomerService customerService, IConfiguration configuration)
+        {
+            _customerService = customerService;
+            _configuration = configuration;
+            LoginCommand = new RelayCommand(ExecuteLogin, CanExecuteLogin);
+        }
 
         public string Email
         {
             get => _email;
-            set { _email = value; OnPropertyChanged(nameof(Email)); }
+            set => SetProperty(ref _email, value);
         }
 
         public string Password
         {
             get => _password;
-            set { _password = value; OnPropertyChanged(nameof(Password)); }
+            set => SetProperty(ref _password, value);
         }
 
         public string ErrorMessage
         {
             get => _errorMessage;
-            set { _errorMessage = value; OnPropertyChanged(nameof(ErrorMessage)); }
+            set => SetProperty(ref _errorMessage, value);
         }
 
         public ICommand LoginCommand { get; }
 
-        public LoginViewModel()
+        private bool CanExecuteLogin(object? parameter)
         {
-            _customerService = new CustomerService();
-            LoginCommand = new RelayCommand(ExecuteLogin);
+            return !string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password);
         }
 
-        public static IConfiguration LoadConfiguration()
+        private void ExecuteLogin(object? parameter)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory()) // path đến thư mục chạy
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            ErrorMessage = string.Empty;
 
-            return builder.Build();
-        }
-
-        private void ExecuteLogin(object parameter)
-        {
-            //IConfiguration config = ConfigurationHelper.LoadConfiguration();
-
-            // With this corrected implementation:
-            IConfiguration config = LoadConfiguration();
-
-            //IConfiguration config = ConfigurationHelper.LoadConfiguration();
-            string adminEmail = config["AdminAccount:Email"];
-            string adminPassword = config["AdminAccount:Password"];
+            // Check admin credentials
+            var adminEmail = _configuration["AdminAccount:Email"];
+            var adminPassword = _configuration["AdminAccount:Password"];
 
             if (Email == adminEmail && Password == adminPassword)
             {
-                var adminDashboard = new AdminDashboard();
-                adminDashboard.Show();
-                Application.Current.MainWindow.Close();
-                Application.Current.MainWindow = adminDashboard;
+                // Open Admin Dashboard
+                var adminWindow = new Views.AdminDashboard();
+                adminWindow.Show();
+
+                // Close login window
+                if (parameter is Window loginWindow)
+                {
+                    loginWindow.Close();
+                }
                 return;
             }
 
+            // Check customer credentials
             var customer = _customerService.GetCustomerByEmail(Email);
-            if (customer != null && customer.Password == Password && customer.CustomerStatus == 1)
+            if (customer != null && customer.Password == Password)
             {
-                var customerDashboard = new CustomerDashboard(customer);
-                customerDashboard.Show();
-                Application.Current.MainWindow.Close();
-                Application.Current.MainWindow = customerDashboard;
+                // Open Customer Dashboard
+                var customerWindow = new Views.CustomerDashboard(customer);
+                customerWindow.Show();
+
+                // Close login window
+                if (parameter is Window loginWindow)
+                {
+                    loginWindow.Close();
+                }
+                return;
             }
-            else
-            {
-                ErrorMessage = "Invalid email or password.";
-            }
-        }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    public class RelayCommand : ICommand
-    {
-        private readonly Action<object> _execute;
-        private readonly Func<object, bool> _canExecute;
-
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
-        {
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-
-        public bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
-        public void Execute(object parameter) => _execute(parameter);
-        public event EventHandler CanExecuteChanged
-        {
-            add => CommandManager.RequerySuggested += value;
-            remove => CommandManager.RequerySuggested -= value;
+            ErrorMessage = "Invalid email or password.";
         }
     }
 }

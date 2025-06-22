@@ -1,95 +1,106 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using FUMiniHotelSystem.DAL.Models;
 using FUMiniHotelSystem.BLL.Services;
-using FUMiniHotelSystem.DAL.Models;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using TranVanTungWPF.ViewModels;
 
 namespace TranVanTungWPF.Views
 {
     public partial class RoomDialog : Window
     {
-        public class RoomDialogViewModel : INotifyPropertyChanged
+        private readonly IRoomService _roomService;
+        public RoomInformation? Room { get; private set; }
+
+        public RoomDialog(IRoomService roomService)
         {
-            private readonly IRoomService _roomService;
-            private RoomInformation _room;
-            private string _errorMessage;
+            InitializeComponent();
+            _roomService = roomService;
+            LoadRoomTypes();
+        }
 
-            public RoomInformation Room
+        public RoomDialog(IRoomService roomService, RoomInformation room) : this(roomService)
+        {
+            Room = room;
+            LoadRoomData();
+        }
+
+        private void LoadRoomTypes()
+        {
+            var roomTypes = _roomService.GetAllRoomTypes().ToList();
+            RoomTypeComboBox.ItemsSource = roomTypes;
+        }
+
+        private void LoadRoomData()
+        {
+            if (Room != null)
             {
-                get => _room;
-                set { _room = value; OnPropertyChanged(nameof(Room)); }
-            }
-
-            public ObservableCollection<RoomType> RoomTypes { get; }
-
-            public string ErrorMessage
-            {
-                get => _errorMessage;
-                set { _errorMessage = value; OnPropertyChanged(nameof(ErrorMessage)); }
-            }
-
-            public string Title => Room.RoomID == 0 ? "Add Room" : "Edit Room";
-
-            public ICommand SaveCommand { get; }
-            public ICommand CancelCommand { get; }
-
-            public RoomDialogViewModel(RoomInformation room)
-            {
-                _roomService = new RoomService();
-                RoomTypes = new ObservableCollection<RoomType>(_roomService.GetAllRoomTypes());
-                Room = room != null ? new RoomInformation
-                {
-                    RoomID = room.RoomID,
-                    RoomNumber = room.RoomNumber,
-                    RoomDescription = room.RoomDescription,
-                    RoomMaxCapacity = room.RoomMaxCapacity,
-                    RoomStatus = room.RoomStatus,
-                    RoomPricePerDate = room.RoomPricePerDate,
-                    RoomTypeID = room.RoomTypeID
-                } : new RoomInformation { RoomStatus = 1 };
-                SaveCommand = new RelayCommand(_ => ExecuteSave());
-                CancelCommand = new RelayCommand(_ => ((Window)Application.Current.Windows.OfType<RoomDialog>().First()).DialogResult = false);
-            }
-
-            private void ExecuteSave()
-            {
-                if (_roomService.ValidateRoom(Room, out var errors))
-                {
-                    ((Window)Application.Current.Windows.OfType<RoomDialog>().First()).DialogResult = true;
-                }
-                else
-                {
-                    ErrorMessage = string.Join("\n", errors);
-                }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-            protected void OnPropertyChanged(string propertyName)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                RoomNumberTextBox.Text = Room.RoomNumber;
+                RoomDescriptionTextBox.Text = Room.RoomDescription;
+                MaxCapacityTextBox.Text = Room.RoomMaxCapacity.ToString();
+                PriceTextBox.Text = Room.RoomPricePerDate.ToString();
+                RoomTypeComboBox.SelectedValue = Room.RoomTypeID;
             }
         }
 
-        public RoomInformation Room => ((RoomDialogViewModel)DataContext).Room;
-
-        public RoomDialog(RoomInformation room)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            DataContext = new RoomDialogViewModel(room);
+            try
+            {
+                if (!int.TryParse(MaxCapacityTextBox.Text, out int maxCapacity))
+                {
+                    MessageBox.Show("Please enter a valid number for max capacity.", "Validation Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(PriceTextBox.Text, out decimal price))
+                {
+                    MessageBox.Show("Please enter a valid price.", "Validation Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (RoomTypeComboBox.SelectedValue == null)
+                {
+                    MessageBox.Show("Please select a room type.", "Validation Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                var room = new RoomInformation
+                {
+                    RoomID = Room?.RoomID ?? 0,
+                    RoomNumber = RoomNumberTextBox.Text.Trim(),
+                    RoomDescription = RoomDescriptionTextBox.Text.Trim(),
+                    RoomMaxCapacity = maxCapacity,
+                    RoomPricePerDate = price,
+                    RoomTypeID = (int)RoomTypeComboBox.SelectedValue,
+                    RoomStatus = 1
+                };
+
+                if (_roomService.ValidateRoom(room, out var errors))
+                {
+                    Room = room;
+                    DialogResult = true;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(string.Join("\n", errors), "Validation Error",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
         }
     }
 }

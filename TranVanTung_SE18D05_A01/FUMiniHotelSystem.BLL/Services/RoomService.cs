@@ -1,92 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FUMiniHotelSystem.BLL.Validators;
 using FUMiniHotelSystem.DAL.Models;
 using FUMiniHotelSystem.DAL.Repositories;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FUMiniHotelSystem.BLL.Services
 {
     public class RoomService : IRoomService
     {
         private readonly IRoomRepository _roomRepository;
+        private readonly RoomValidator _validator;
 
-        public RoomService()
+        public RoomService(IRoomRepository roomRepository)
         {
-            _roomRepository = RoomRepository.Instance;
+            _roomRepository = roomRepository;
+            _validator = new RoomValidator();
         }
 
-        public void AddRoom(RoomInformation room)
+        public IEnumerable<RoomInformation> GetAllRooms()
         {
-            _roomRepository.AddRoom(room);
+            return _roomRepository.GetAll();
         }
 
-        public void UpdateRoom(RoomInformation room)
+        public RoomInformation? GetRoomById(int id)
         {
-            _roomRepository.UpdateRoom(room);
+            return _roomRepository.GetById(id);
         }
 
-        public void DeleteRoom(int roomId)
+        public bool AddRoom(RoomInformation room)
         {
-            _roomRepository.DeleteRoom(roomId);
+            if (!ValidateRoom(room, out var errors))
+                return false;
+
+            // Check if room number already exists
+            if (_roomRepository.GetAll().Any(r => r.RoomNumber == room.RoomNumber))
+                return false;
+
+            _roomRepository.Add(room);
+            return true;
         }
 
-        public RoomInformation GetRoomById(int roomId)
+        public bool UpdateRoom(RoomInformation room)
         {
-            return _roomRepository.GetRoomById(roomId);
+            if (!ValidateRoom(room, out var errors))
+                return false;
+
+            // Check if room number already exists for another room
+            var existingRoom = _roomRepository.GetAll().FirstOrDefault(r => r.RoomNumber == room.RoomNumber);
+            if (existingRoom != null && existingRoom.RoomID != room.RoomID)
+                return false;
+
+            _roomRepository.Update(room);
+            return true;
         }
 
-        public List<RoomInformation> GetAllRooms()
+        public bool DeleteRoom(int id)
         {
-            return _roomRepository.GetAllRooms();
+            var room = _roomRepository.GetById(id);
+            if (room == null)
+                return false;
+
+            _roomRepository.Delete(id);
+            return true;
         }
 
-        public List<RoomInformation> SearchRooms(string searchTerm)
+        public IEnumerable<RoomInformation> SearchRooms(string searchTerm)
         {
-            return _roomRepository.SearchRooms(searchTerm);
+            return _roomRepository.Search(searchTerm);
         }
 
-        public List<RoomType> GetAllRoomTypes()
+        public IEnumerable<RoomType> GetAllRoomTypes()
         {
             return _roomRepository.GetAllRoomTypes();
         }
 
         public bool ValidateRoom(RoomInformation room, out List<string> errors)
         {
-            errors = new List<string>();
-            var validationResults = new List<ValidationResult>();
-            var context = new ValidationContext(room);
-            bool isValid = Validator.TryValidateObject(room, context, validationResults, true);
-
-            if (!isValid)
-            {
-                errors.AddRange(validationResults.Select(r => r.ErrorMessage));
-            }
-
-            // Additional business rules
-            if (_roomRepository.GetAllRooms().Any(r => r.RoomNumber == room.RoomNumber && r.RoomID != room.RoomID))
-            {
-                errors.Add("Room number already exists.");
-            }
-
-            if (!_roomRepository.GetAllRoomTypes().Any(rt => rt.RoomTypeID == room.RoomTypeID))
-            {
-                errors.Add("Invalid room type ID.");
-            }
-
-            return errors.Count == 0;
-        }
-
-        public void AddRoom(object room)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateRoom(object room)
-        {
-            throw new NotImplementedException();
+            return _validator.Validate(room, out errors);
         }
     }
 }

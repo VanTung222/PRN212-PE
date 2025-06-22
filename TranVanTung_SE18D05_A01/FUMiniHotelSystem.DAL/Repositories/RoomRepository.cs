@@ -1,89 +1,102 @@
-﻿using System;
+﻿using FUMiniHotelSystem.DAL.Data;
+using FUMiniHotelSystem.DAL.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.DAL.Models;
-
 
 namespace FUMiniHotelSystem.DAL.Repositories
 {
     public class RoomRepository : IRoomRepository
     {
-        private readonly List<RoomInformation> _rooms;
-        private readonly List<RoomType> _roomTypes;
-        private static RoomRepository _instance;
+        private readonly DataContext _context;
 
-        private RoomRepository()
+        public RoomRepository()
         {
-            _roomTypes = new List<RoomType>
-            {
-                new RoomType { RoomTypeID = 1, RoomTypeName = "Standard", TypeDescription = "Basic room", TypeNote = "" },
-                new RoomType { RoomTypeID = 2, RoomTypeName = "Deluxe", TypeDescription = "Room with view", TypeNote = "" }
-            };
-
-            _rooms = new List<RoomInformation>
-            {
-                new RoomInformation { RoomID = 1, RoomNumber = "101", RoomDescription = "Standard room", RoomMaxCapacity = 2, RoomStatus = 1, RoomPricePerDate = 500000, RoomTypeID = 1 }
-            };
+            _context = DataContext.Instance;
         }
 
-        public static RoomRepository Instance
+        public IEnumerable<RoomInformation> GetAll()
         {
-            get => _instance ??= new RoomRepository(); // Singleton Pattern
+            return _context.Rooms
+                .Where(r => r.RoomStatus == 1)
+                .Select(r => new RoomInformation
+                {
+                    RoomID = r.RoomID,
+                    RoomNumber = r.RoomNumber,
+                    RoomDescription = r.RoomDescription,
+                    RoomMaxCapacity = r.RoomMaxCapacity,
+                    RoomStatus = r.RoomStatus,
+                    RoomPricePerDate = r.RoomPricePerDate,
+                    RoomTypeID = r.RoomTypeID,
+                    RoomType = _context.RoomTypes.FirstOrDefault(rt => rt.RoomTypeID == r.RoomTypeID)
+                })
+                .OrderByDescending(r => r.RoomID);
         }
 
-        public void AddRoom(RoomInformation room)
+        public RoomInformation? GetById(int id)
         {
-            room.RoomID = _rooms.Any() ? _rooms.Max(r => r.RoomID) + 1 : 1;
-            _rooms.Add(room);
-        }
-
-        public void UpdateRoom(RoomInformation room)
-        {
-            var existing = _rooms.FirstOrDefault(r => r.RoomID == room.RoomID);
-            if (existing != null)
+            var room = _context.Rooms.FirstOrDefault(r => r.RoomID == id && r.RoomStatus == 1);
+            if (room != null)
             {
-                existing.RoomNumber = room.RoomNumber;
-                existing.RoomDescription = room.RoomDescription;
-                existing.RoomMaxCapacity = room.RoomMaxCapacity;
-                existing.RoomStatus = room.RoomStatus;
-                existing.RoomPricePerDate = room.RoomPricePerDate;
-                existing.RoomTypeID = room.RoomTypeID;
+                room.RoomType = _context.RoomTypes.FirstOrDefault(rt => rt.RoomTypeID == room.RoomTypeID);
+            }
+            return room;
+        }
+
+        public void Add(RoomInformation room)
+        {
+            room.RoomID = _context.GetNextRoomId();
+            room.RoomStatus = 1;
+            _context.Rooms.Add(room);
+        }
+
+        public void Update(RoomInformation room)
+        {
+            var existingRoom = _context.Rooms.FirstOrDefault(r => r.RoomID == room.RoomID);
+            if (existingRoom != null)
+            {
+                existingRoom.RoomNumber = room.RoomNumber;
+                existingRoom.RoomDescription = room.RoomDescription;
+                existingRoom.RoomMaxCapacity = room.RoomMaxCapacity;
+                existingRoom.RoomPricePerDate = room.RoomPricePerDate;
+                existingRoom.RoomTypeID = room.RoomTypeID;
             }
         }
 
-        public void DeleteRoom(int roomId)
+        public void Delete(int id)
         {
-            var room = _rooms.FirstOrDefault(r => r.RoomID == roomId);
+            var room = _context.Rooms.FirstOrDefault(r => r.RoomID == id);
             if (room != null)
+            {
                 room.RoomStatus = 2; // Soft delete
+            }
         }
 
-        public RoomInformation GetRoomById(int roomId)
+        public IEnumerable<RoomInformation> Search(string searchTerm)
         {
-            return _rooms.FirstOrDefault(r => r.RoomID == roomId && r.RoomStatus == 1);
-        }
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return GetAll();
 
-        public List<RoomInformation> GetAllRooms()
-        {
-            return _rooms.Where(r => r.RoomStatus == 1).ToList();
-        }
-
-        public List<RoomInformation> SearchRooms(string searchTerm)
-        {
-            if (string.IsNullOrEmpty(searchTerm))
-                return GetAllRooms();
-            return _rooms
+            return _context.Rooms
                 .Where(r => r.RoomStatus == 1 &&
-                            (r.RoomNumber.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                             r.RoomDescription.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
-                .ToList();
+                           (r.RoomNumber.Contains(searchTerm) ||
+                            r.RoomDescription.Contains(searchTerm)))
+                .Select(r => new RoomInformation
+                {
+                    RoomID = r.RoomID,
+                    RoomNumber = r.RoomNumber,
+                    RoomDescription = r.RoomDescription,
+                    RoomMaxCapacity = r.RoomMaxCapacity,
+                    RoomStatus = r.RoomStatus,
+                    RoomPricePerDate = r.RoomPricePerDate,
+                    RoomTypeID = r.RoomTypeID,
+                    RoomType = _context.RoomTypes.FirstOrDefault(rt => rt.RoomTypeID == r.RoomTypeID)
+                })
+                .OrderByDescending(r => r.RoomID);
         }
 
-        public List<RoomType> GetAllRoomTypes()
+        public IEnumerable<RoomType> GetAllRoomTypes()
         {
-            return _roomTypes;
+            return _context.RoomTypes;
         }
     }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// FUMiniHotelSystem.DAL/Models/RoomInformation.cs
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FUMiniHotelSystem.DAL.Models
 {
@@ -13,22 +6,22 @@ namespace FUMiniHotelSystem.DAL.Models
     {
         public int RoomID { get; set; }
 
-        [Required(ErrorMessage = "Room number is required")]
-        [StringLength(50, ErrorMessage = "Room number cannot exceed 50 characters")]
-        public string RoomNumber { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string RoomNumber { get; set; } = string.Empty;
 
-        [StringLength(220, ErrorMessage = "Description cannot exceed 220 characters")]
-        public string RoomDescription { get; set; }
+        [StringLength(220)]
+        public string RoomDescription { get; set; } = string.Empty;
 
-        [Range(1, int.MaxValue, ErrorMessage = "Max capacity must be greater than 0")]
         public int RoomMaxCapacity { get; set; }
 
-        public int RoomStatus { get; set; } // 1 = Active, 2 = Deleted
+        public int RoomStatus { get; set; } = 1; // 1 = Active, 2 = Deleted
 
-        [Range(0, double.MaxValue, ErrorMessage = "Price must be non-negative")]
         public decimal RoomPricePerDate { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = "Room type ID must be valid")]
         public int RoomTypeID { get; set; }
+
+        // Navigation property
+        public RoomType? RoomType { get; set; }
     }
 }

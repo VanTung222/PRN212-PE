@@ -1,5 +1,4 @@
-﻿// FUMiniHotelSystem.DAL/Models/Customer.cs
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FUMiniHotelSystem.DAL.Models
@@ -8,27 +7,24 @@ namespace FUMiniHotelSystem.DAL.Models
     {
         public int CustomerID { get; set; }
 
-        [Required(ErrorMessage = "Full name is required")]
-        [StringLength(50, ErrorMessage = "Full name cannot exceed 50 characters")]
-        public string CustomerFullName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string CustomerFullName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Telephone is required")]
-        [StringLength(12, ErrorMessage = "Telephone cannot exceed 12 characters")]
-        [RegularExpression(@"^\d+$", ErrorMessage = "Telephone must contain only digits")]
-        public string Telephone { get; set; }
+        [StringLength(12)]
+        public string Telephone { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Email is required")]
-        [StringLength(50, ErrorMessage = "Email cannot exceed 50 characters")]
-        [EmailAddress(ErrorMessage = "Invalid email format")]
-        public string EmailAddress { get; set; }
+        [Required]
+        [StringLength(50)]
+        [EmailAddress]
+        public string EmailAddress { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Birthday is required")]
         public DateTime CustomerBirthday { get; set; }
 
-        public int CustomerStatus { get; set; } // 1 = Active, 2 = Deleted
+        public int CustomerStatus { get; set; } = 1; // 1 = Active, 2 = Deleted
 
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(50, ErrorMessage = "Password cannot exceed 50 characters")]
-        public string Password { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Password { get; set; } = string.Empty;
     }
 }

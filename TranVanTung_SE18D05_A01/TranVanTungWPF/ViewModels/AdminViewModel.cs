@@ -1,149 +1,259 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FUMiniHotelSystem.BLL.Services;
+﻿using FUMiniHotelSystem.BLL.Services;
 using FUMiniHotelSystem.DAL.Models;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using TranVanTungWPF.Views;
+using TranVanTungWPF.Commands;
 
 namespace TranVanTungWPF.ViewModels
 {
-    public class AdminViewModel : INotifyPropertyChanged
+    public class AdminViewModel : BaseViewModel
     {
         private readonly ICustomerService _customerService;
         private readonly IRoomService _roomService;
-        private ObservableCollection<Customer> _customers;
-        private ObservableCollection<RoomInformation> _rooms;
-        private string _customerSearchTerm;
-        private string _roomSearchTerm;
+        private string _customerSearchText = string.Empty;
+        private string _roomSearchText = string.Empty;
+        private Customer? _selectedCustomer;
+        private RoomInformation? _selectedRoom;
 
-        public ObservableCollection<Customer> Customers
+        public AdminViewModel(ICustomerService customerService, IRoomService roomService)
         {
-            get => _customers;
-            set { _customers = value; OnPropertyChanged(nameof(Customers)); }
+            _customerService = customerService;
+            _roomService = roomService;
+
+            Customers = new ObservableCollection<Customer>();
+            Rooms = new ObservableCollection<RoomInformation>();
+
+            LoadCustomers();
+            LoadRooms();
+
+            // Customer commands
+            AddCustomerCommand = new RelayCommand(ExecuteAddCustomer);
+            EditCustomerCommand = new RelayCommand(ExecuteEditCustomer, CanExecuteEditCustomer);
+            DeleteCustomerCommand = new RelayCommand(ExecuteDeleteCustomer, CanExecuteDeleteCustomer);
+            SearchCustomersCommand = new RelayCommand(ExecuteSearchCustomers);
+
+            // Room commands
+            AddRoomCommand = new RelayCommand(ExecuteAddRoom);
+            EditRoomCommand = new RelayCommand(ExecuteEditRoom, CanExecuteEditRoom);
+            DeleteRoomCommand = new RelayCommand(ExecuteDeleteRoom, CanExecuteDeleteRoom);
+            SearchRoomsCommand = new RelayCommand(ExecuteSearchRooms);
         }
 
-        public ObservableCollection<RoomInformation> Rooms
+        public ObservableCollection<Customer> Customers { get; }
+        public ObservableCollection<RoomInformation> Rooms { get; }
+
+        public string CustomerSearchText
         {
-            get => _rooms;
-            set { _rooms = value; OnPropertyChanged(nameof(Rooms)); }
+            get => _customerSearchText;
+            set => SetProperty(ref _customerSearchText, value);
         }
 
-        public string CustomerSearchTerm
+        public string RoomSearchText
         {
-            get => _customerSearchTerm;
-            set
-            {
-                _customerSearchTerm = value;
-                OnPropertyChanged(nameof(CustomerSearchTerm));
-                SearchCustomers();
-            }
+            get => _roomSearchText;
+            set => SetProperty(ref _roomSearchText, value);
         }
 
-        public string RoomSearchTerm
+        public Customer? SelectedCustomer
         {
-            get => _roomSearchTerm;
-            set
-            {
-                _roomSearchTerm = value;
-                OnPropertyChanged(nameof(RoomSearchTerm));
-                SearchRooms();
-            }
+            get => _selectedCustomer;
+            set => SetProperty(ref _selectedCustomer, value);
         }
 
+        public RoomInformation? SelectedRoom
+        {
+            get => _selectedRoom;
+            set => SetProperty(ref _selectedRoom, value);
+        }
+
+        // Customer Commands
         public ICommand AddCustomerCommand { get; }
         public ICommand EditCustomerCommand { get; }
         public ICommand DeleteCustomerCommand { get; }
+        public ICommand SearchCustomersCommand { get; }
+
+        // Room Commands
         public ICommand AddRoomCommand { get; }
         public ICommand EditRoomCommand { get; }
         public ICommand DeleteRoomCommand { get; }
+        public ICommand SearchRoomsCommand { get; }
 
-        public AdminViewModel()
+        private void LoadCustomers()
         {
-            _customerService = new CustomerService();
-            _roomService = new RoomService();
-            Customers = new ObservableCollection<Customer>(_customerService.GetAllCustomers());
-            Rooms = new ObservableCollection<RoomInformation>(_roomService.GetAllRooms());
-
-            AddCustomerCommand = new RelayCommand(_ => OpenCustomerDialog(null));
-            EditCustomerCommand = new RelayCommand(param => OpenCustomerDialog(param as Customer), param => param != null);
-            DeleteCustomerCommand = new RelayCommand(param => DeleteCustomer(param as Customer), param => param != null);
-            AddRoomCommand = new RelayCommand(_ => OpenRoomDialog(null));
-            EditRoomCommand = new RelayCommand(param => OpenRoomDialog(param as RoomInformation), param => param != null);
-            DeleteRoomCommand = new RelayCommand(param => DeleteRoom(param as RoomInformation), param => param != null);
+            Customers.Clear();
+            var customers = _customerService.GetAllCustomers();
+            foreach (var customer in customers)
+            {
+                Customers.Add(customer);
+            }
         }
 
-        private void OpenCustomerDialog(Customer customer)
+        private void LoadRooms()
         {
-            var dialog = new CustomerDialog(customer);
-            if (dialog.ShowDialog() == true)
+            Rooms.Clear();
+            var rooms = _roomService.GetAllRooms();
+            foreach (var room in rooms)
             {
-                if (customer == null)
+                Rooms.Add(room);
+            }
+        }
+
+        // Customer Methods
+        private void ExecuteAddCustomer(object? parameter)
+        {
+            var dialog = new Views.CustomerDialog();
+            if (dialog.ShowDialog() == true && dialog.Customer != null)
+            {
+                if (_customerService.AddCustomer(dialog.Customer))
                 {
-                    _customerService.AddCustomer(dialog.Customer);
+                    LoadCustomers();
+                    MessageBox.Show("Customer added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    _customerService.UpdateCustomer(dialog.Customer);
+                    MessageBox.Show("Failed to add customer. Please check the information.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                Customers = new ObservableCollection<Customer>(_customerService.GetAllCustomers());
             }
         }
 
-        private void DeleteCustomer(Customer customer)
+        private bool CanExecuteEditCustomer(object? parameter)
         {
-            if (MessageBox.Show("Are you sure you want to delete this customer?", "Confirm Delete", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                _customerService.DeleteCustomer(customer.CustomerID);
-                Customers = new ObservableCollection<Customer>(_customerService.GetAllCustomers());
-            }
+            return SelectedCustomer != null;
         }
 
-        private void OpenRoomDialog(RoomInformation room)
+        private void ExecuteEditCustomer(object? parameter)
         {
-            var dialog = new RoomDialog(room);
-            if (dialog.ShowDialog() == true)
+            if (SelectedCustomer == null) return;
+
+            var dialog = new Views.CustomerDialog(SelectedCustomer);
+            if (dialog.ShowDialog() == true && dialog.Customer != null)
             {
-                if (room == null)
+                if (_customerService.UpdateCustomer(dialog.Customer))
                 {
-                    _roomService.AddRoom(dialog.Room);
+                    LoadCustomers();
+                    MessageBox.Show("Customer updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    _roomService.UpdateRoom(dialog.Room);
+                    MessageBox.Show("Failed to update customer. Please check the information.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                Rooms = new ObservableCollection<RoomInformation>(_roomService.GetAllRooms());
             }
         }
 
-        private void DeleteRoom(RoomInformation room)
+        private bool CanExecuteDeleteCustomer(object? parameter)
         {
-            if (MessageBox.Show("Are you sure you want to delete this room?", "Confirm Delete", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            return SelectedCustomer != null;
+        }
+
+        private void ExecuteDeleteCustomer(object? parameter)
+        {
+            if (SelectedCustomer == null) return;
+
+            var result = MessageBox.Show($"Are you sure you want to delete customer '{SelectedCustomer.CustomerFullName}'?",
+                "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
             {
-                _roomService.DeleteRoom(room.RoomID);
-                Rooms = new ObservableCollection<RoomInformation>(_roomService.GetAllRooms());
+                if (_customerService.DeleteCustomer(SelectedCustomer.CustomerID))
+                {
+                    LoadCustomers();
+                    MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete customer.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
-        private void SearchCustomers()
+        private void ExecuteSearchCustomers(object? parameter)
         {
-            Customers = new ObservableCollection<Customer>(_customerService.SearchCustomers(CustomerSearchTerm));
+            Customers.Clear();
+            var customers = _customerService.SearchCustomers(CustomerSearchText);
+            foreach (var customer in customers)
+            {
+                Customers.Add(customer);
+            }
         }
 
-        private void SearchRooms()
+        // Room Methods
+        private void ExecuteAddRoom(object? parameter)
         {
-            Rooms = new ObservableCollection<RoomInformation>(_roomService.SearchRooms(RoomSearchTerm));
+            var dialog = new Views.RoomDialog(_roomService);
+            if (dialog.ShowDialog() == true && dialog.Room != null)
+            {
+                if (_roomService.AddRoom(dialog.Room))
+                {
+                    LoadRooms();
+                    MessageBox.Show("Room added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add room. Please check the information.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        private bool CanExecuteEditRoom(object? parameter)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return SelectedRoom != null;
+        }
+
+        private void ExecuteEditRoom(object? parameter)
+        {
+            if (SelectedRoom == null) return;
+
+            var dialog = new Views.RoomDialog(_roomService, SelectedRoom);
+            if (dialog.ShowDialog() == true && dialog.Room != null)
+            {
+                if (_roomService.UpdateRoom(dialog.Room))
+                {
+                    LoadRooms();
+                    MessageBox.Show("Room updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update room. Please check the information.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private bool CanExecuteDeleteRoom(object? parameter)
+        {
+            return SelectedRoom != null;
+        }
+
+        private void ExecuteDeleteRoom(object? parameter)
+        {
+            if (SelectedRoom == null) return;
+
+            var result = MessageBox.Show($"Are you sure you want to delete room '{SelectedRoom.RoomNumber}'?",
+                "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                if (_roomService.DeleteRoom(SelectedRoom.RoomID))
+                {
+                    LoadRooms();
+                    MessageBox.Show("Room deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete room.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void ExecuteSearchRooms(object? parameter)
+        {
+            Rooms.Clear();
+            var rooms = _roomService.SearchRooms(RoomSearchText);
+            foreach (var room in rooms)
+            {
+                Rooms.Add(room);
+            }
         }
     }
 }

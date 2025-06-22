@@ -1,87 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FUMiniHotelSystem.BLL.Validators;
 using FUMiniHotelSystem.DAL.Models;
 using FUMiniHotelSystem.DAL.Repositories;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FUMiniHotelSystem.BLL.Services
 {
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly CustomerValidator _validator;
 
-        public CustomerService()
+        public CustomerService(ICustomerRepository customerRepository)
         {
-            _customerRepository = CustomerRepository.Instance;
+            _customerRepository = customerRepository;
+            _validator = new CustomerValidator();
         }
 
-        public void AddCustomer(Customer customer)
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            _customerRepository.AddCustomer(customer);
+            return _customerRepository.GetAll();
         }
 
-        public void UpdateCustomer(Customer customer)
+        public Customer? GetCustomerById(int id)
         {
-            _customerRepository.UpdateCustomer(customer);
+            return _customerRepository.GetById(id);
         }
 
-        public void DeleteCustomer(int customerId)
+        public Customer? GetCustomerByEmail(string email)
         {
-            _customerRepository.DeleteCustomer(customerId);
+            return _customerRepository.GetByEmail(email);
         }
 
-        public Customer GetCustomerById(int customerId)
+        public bool AddCustomer(Customer customer)
         {
-            return _customerRepository.GetCustomerById(customerId);
+            if (!ValidateCustomer(customer, out var errors))
+                return false;
+
+            // Check if email already exists
+            if (_customerRepository.GetByEmail(customer.EmailAddress) != null)
+                return false;
+
+            _customerRepository.Add(customer);
+            return true;
         }
 
-        public Customer GetCustomerByEmail(string email)
+        public bool UpdateCustomer(Customer customer)
         {
-            return _customerRepository.GetCustomerByEmail(email);
+            if (!ValidateCustomer(customer, out var errors))
+                return false;
+
+            // Check if email already exists for another customer
+            var existingCustomer = _customerRepository.GetByEmail(customer.EmailAddress);
+            if (existingCustomer != null && existingCustomer.CustomerID != customer.CustomerID)
+                return false;
+
+            _customerRepository.Update(customer);
+            return true;
         }
 
-        public List<Customer> GetAllCustomers()
+        public bool DeleteCustomer(int id)
         {
-            return _customerRepository.GetAllCustomers();
+            var customer = _customerRepository.GetById(id);
+            if (customer == null)
+                return false;
+
+            _customerRepository.Delete(id);
+            return true;
         }
 
-        public List<Customer> SearchCustomers(string searchTerm)
+        public IEnumerable<Customer> SearchCustomers(string searchTerm)
         {
-            return _customerRepository.SearchCustomers(searchTerm);
+            return _customerRepository.Search(searchTerm);
         }
 
         public bool ValidateCustomer(Customer customer, out List<string> errors)
         {
-            errors = new List<string>();
-            var validationResults = new List<ValidationResult>();
-            var context = new ValidationContext(customer);
-            bool isValid = Validator.TryValidateObject(customer, context, validationResults, true);
-
-            if (!isValid)
-            {
-                errors.AddRange(validationResults.Select(r => r.ErrorMessage));
-            }
-
-            // Additional business rules
-            if (_customerRepository.GetAllCustomers().Any(c => c.EmailAddress == customer.EmailAddress && c.CustomerID != customer.CustomerID))
-            {
-                errors.Add("Email address already exists.");
-            }
-
-            return errors.Count == 0;
-        }
-
-        public void AddCustomer(object customer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateCustomer(object customer)
-        {
-            throw new NotImplementedException();
+            return _validator.Validate(customer, out errors);
         }
     }
 }

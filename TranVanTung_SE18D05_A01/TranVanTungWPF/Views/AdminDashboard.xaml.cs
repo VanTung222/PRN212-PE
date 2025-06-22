@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TranVanTungWPF.ViewModels;
+using FUMiniHotelSystem.BLL.Services;
+using FUMiniHotelSystem.DAL.Repositories;
 
 namespace TranVanTungWPF.Views
 {
@@ -20,7 +10,14 @@ namespace TranVanTungWPF.Views
         public AdminDashboard()
         {
             InitializeComponent();
-            DataContext = new AdminViewModel();
+
+            // Setup services
+            var customerRepository = new CustomerRepository();
+            var customerService = new CustomerService(customerRepository);
+            var roomRepository = new RoomRepository();
+            var roomService = new RoomService(roomRepository);
+
+            DataContext = new AdminViewModel(customerService, roomService);
         }
     }
 }

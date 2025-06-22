@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// FUMiniHotelSystem.DAL/Models/RoomType.cs
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FUMiniHotelSystem.DAL.Models
 {
@@ -13,14 +6,14 @@ namespace FUMiniHotelSystem.DAL.Models
     {
         public int RoomTypeID { get; set; }
 
-        [Required(ErrorMessage = "Room type name is required")]
-        [StringLength(50, ErrorMessage = "Room type name cannot exceed 50 characters")]
-        public string RoomTypeName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string RoomTypeName { get; set; } = string.Empty;
 
-        [StringLength(250, ErrorMessage = "Description cannot exceed 250 characters")]
-        public string TypeDescription { get; set; }
+        [StringLength(250)]
+        public string TypeDescription { get; set; } = string.Empty;
 
-        [StringLength(250, ErrorMessage = "Note cannot exceed 250 characters")]
-        public string TypeNote { get; set; }
+        [StringLength(250)]
+        public string TypeNote { get; set; } = string.Empty;
     }
 }

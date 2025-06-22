@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using FUMiniHotelSystem.DAL.Models;
+﻿using System.Windows;
 using TranVanTungWPF.ViewModels;
+using FUMiniHotelSystem.DAL.Models;
+using FUMiniHotelSystem.BLL.Services;
+using FUMiniHotelSystem.DAL.Repositories;
 
 namespace TranVanTungWPF.Views
 {
@@ -21,7 +11,12 @@ namespace TranVanTungWPF.Views
         public CustomerDashboard(Customer customer)
         {
             InitializeComponent();
-            DataContext = new CustomerViewModel(customer);
+
+            // Setup services
+            var customerRepository = new CustomerRepository();
+            var customerService = new CustomerService(customerRepository);
+
+            DataContext = new CustomerViewModel(customer, customerService);
         }
     }
 }
