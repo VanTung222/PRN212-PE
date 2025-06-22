@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TranVanTungWPF.Views.CustomerDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Customer Information" Height="511" Width="500"
+        Title="Customer Information" Height="557" Width="500"
         WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid Margin="20">
         <Grid.RowDefinitions>

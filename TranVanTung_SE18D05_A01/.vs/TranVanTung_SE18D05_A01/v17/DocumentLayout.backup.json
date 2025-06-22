@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B39390BF-A035-47C8-A530-02984A200A1B}|FUMiniHotelSystem.DAL\\FUMiniHotelSystem.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\fuminihotelsystem.dal\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B39390BF-A035-47C8-A530-02984A200A1B}|FUMiniHotelSystem.DAL\\FUMiniHotelSystem.DAL.csproj|solutionrelative:fuminihotelsystem.dal\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B39390BF-A035-47C8-A530-02984A200A1B}|FUMiniHotelSystem.DAL\\FUMiniHotelSystem.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\fuminihotelsystem.dal\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39390BF-A035-47C8-A530-02984A200A1B}|FUMiniHotelSystem.DAL\\FUMiniHotelSystem.DAL.csproj|solutionrelative:fuminihotelsystem.dal\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\roomdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -31,16 +19,32 @@
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B39390BF-A035-47C8-A530-02984A200A1B}|FUMiniHotelSystem.DAL\\FUMiniHotelSystem.DAL.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\fuminihotelsystem.dal\\models\\bookingdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +63,6 @@
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\views\\customerdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\views\\customerdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|d:\\specialization5\\off\\prn212\\pe\\tranvantung_se18d05_a01\\tranvantungwpf\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9D6F04A6-9653-47E6-9B4C-1CF9B324EA07}|TranVanTungWPF\\TranVanTungWPF.csproj|solutionrelative:tranvantungwpf\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,19 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CustomerDashboard.xaml",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDashboard.xaml",
-              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDashboard.xaml",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDashboard.xaml",
-              "RelativeToolTip": "TranVanTungWPF\\Views\\CustomerDashboard.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-22T14:38:26.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "CustomerDialog.xaml",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDialog.xaml",
               "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDialog.xaml",
@@ -122,19 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\App.xaml",
-              "RelativeDocumentMoniker": "TranVanTungWPF\\App.xaml",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\App.xaml",
-              "RelativeToolTip": "TranVanTungWPF\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-22T02:06:51.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LoginWindow.xaml",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\LoginWindow.xaml",
@@ -146,20 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
-              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAwD0AAACQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T05:01:12.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "AdminDashboard.xaml",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\AdminDashboard.xaml",
               "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\AdminDashboard.xaml",
@@ -171,20 +134,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminDashboard.xaml.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
-              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
-              "RelativeToolTip": "TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T14:40:31.597Z",
+              "DocumentIndex": 2,
+              "Title": "RoomDialog.xaml",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\RoomDialog.xaml",
+              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\RoomDialog.xaml",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\RoomDialog.xaml",
+              "RelativeToolTip": "TranVanTungWPF\\Views\\RoomDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-22T14:38:30.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\App.xaml",
+              "RelativeDocumentMoniker": "TranVanTungWPF\\App.xaml",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\App.xaml",
+              "RelativeToolTip": "TranVanTungWPF\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-22T02:06:51.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CustomerViewModel.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\ViewModels\\CustomerViewModel.cs",
               "RelativeDocumentMoniker": "TranVanTungWPF\\ViewModels\\CustomerViewModel.cs",
@@ -197,45 +171,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomDialog.xaml",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\RoomDialog.xaml",
-              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\RoomDialog.xaml",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\RoomDialog.xaml",
-              "RelativeToolTip": "TranVanTungWPF\\Views\\RoomDialog.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-22T14:38:30.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BookingDetail.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
-              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
-              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CustomerDialog.xaml.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
+              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
+              "RelativeToolTip": "TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T15:10:50.805Z",
+              "WhenOpened": "2025-06-22T14:41:03.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BookingReservation.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
-              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
-              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T15:10:11.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "CustomerDashboard.xaml.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDashboard.xaml.cs",
               "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDashboard.xaml.cs",
@@ -248,7 +197,71 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminDashboard.xaml.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
+              "RelativeToolTip": "TranVanTungWPF\\Views\\AdminDashboard.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T14:40:31.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerDashboard.xaml",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDashboard.xaml",
+              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDashboard.xaml",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDashboard.xaml",
+              "RelativeToolTip": "TranVanTungWPF\\Views\\CustomerDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-22T14:38:26.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
+              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Data\\DataContext.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T05:01:12.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BookingDetail.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
+              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
+              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Models\\BookingDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T15:10:50.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "BookingReservation.cs",
+              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
+              "RelativeDocumentMoniker": "FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
+              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
+              "RelativeToolTip": "FUMiniHotelSystem.DAL\\Models\\BookingReservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T15:10:11.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "LoginWindow.xaml.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\LoginWindow.xaml.cs",
@@ -261,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\App.xaml.cs",
               "RelativeDocumentMoniker": "TranVanTungWPF\\App.xaml.cs",
@@ -270,19 +283,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T17:26:23.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CustomerDialog.xaml.cs",
-              "DocumentMoniker": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
-              "RelativeDocumentMoniker": "TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
-              "ToolTip": "D:\\Specialization5\\Off\\PRN212\\PE\\TranVanTung_SE18D05_A01\\TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
-              "RelativeToolTip": "TranVanTungWPF\\Views\\CustomerDialog.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T14:41:03.71Z",
               "EditorCaption": ""
             },
             {
