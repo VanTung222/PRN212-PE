@@ -73,5 +73,15 @@ namespace FUMiniHotelSystem.BLL.Services
 
             return errors.Count == 0;
         }
+
+        public void AddCustomer(object customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCustomer(object customer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -11,17 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FUMiniHotelSystem.DAL.Models;
+using TranVanTungWPF.ViewModels;
 
 namespace TranVanTungWPF.Views
 {
-    /// <summary>
-    /// Interaction logic for CustomerDashboard.xaml
-    /// </summary>
     public partial class CustomerDashboard : Window
     {
-        public CustomerDashboard(FUMiniHotelSystem.DAL.Models.Customer customer)
+        public CustomerDashboard(Customer customer)
         {
             InitializeComponent();
+            DataContext = new CustomerViewModel(customer);
         }
     }
 }

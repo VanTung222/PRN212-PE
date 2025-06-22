@@ -1,12 +1,76 @@
-﻿<Window x:Class="TranVanTungWPF.Views.AdminDashboard"
+﻿<!-- TranVanTungWPF/Views/AdminDashboard.xaml -->
+<Window x:Class="TranVanTungWPF.Views.AdminDashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TranVanTungWPF.Views"
-        mc:Ignorable="d"
-        Title="AdminDashboard" Height="450" Width="800">
-    <Grid>
-        
+        Title="Admin Dashboard" Height="600" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Admin Dashboard" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <TabControl Grid.Row="1" Margin="0,20,0,0">
+            <TabItem Header="Customers">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBox Width="200" Text="{Binding CustomerSearchTerm, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0"/>
+                        <Button Content="Add Customer" Command="{Binding AddCustomerCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Customers}" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding CustomerID}"/>
+                            <DataGridTextColumn Header="Full Name" Binding="{Binding CustomerFullName}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding EmailAddress}"/>
+                            <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}"/>
+                            <DataGridTemplateColumn Header="Actions">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Edit" Command="{Binding DataContext.EditCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                            <Button Content="Delete" Command="{Binding DataContext.DeleteCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Margin="5,0,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Rooms">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBox Width="200" Text="{Binding RoomSearchTerm, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0"/>
+                        <Button Content="Add Room" Command="{Binding AddRoomCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Rooms}" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding RoomID}"/>
+                            <DataGridTextColumn Header="Room Number" Binding="{Binding RoomNumber}"/>
+                            <DataGridTextColumn Header="Description" Binding="{Binding RoomDescription}"/>
+                            <DataGridTextColumn Header="Max Capacity" Binding="{Binding RoomMaxCapacity}"/>
+                            <DataGridTextColumn Header="Price/Day" Binding="{Binding RoomPricePerDate, StringFormat=C}"/>
+                            <DataGridTemplateColumn Header="Actions">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Edit" Command="{Binding DataContext.EditRoomCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                            <Button Content="Delete" Command="{Binding DataContext.DeleteRoomCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Margin="5,0,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

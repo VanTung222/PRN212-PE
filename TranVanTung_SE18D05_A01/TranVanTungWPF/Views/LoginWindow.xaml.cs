@@ -11,17 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TranVanTungWPF.ViewModels;
 
 namespace TranVanTungWPF.Views
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         public LoginWindow()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
     }
 }

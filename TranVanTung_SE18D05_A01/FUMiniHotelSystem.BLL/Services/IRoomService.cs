@@ -17,5 +17,7 @@ namespace FUMiniHotelSystem.BLL.Services
         List<RoomInformation> SearchRooms(string searchTerm);
         List<RoomType> GetAllRoomTypes();
         bool ValidateRoom(RoomInformation room, out List<string> errors);
+        void AddRoom(object room);
+        void UpdateRoom(object room);
     }
 }

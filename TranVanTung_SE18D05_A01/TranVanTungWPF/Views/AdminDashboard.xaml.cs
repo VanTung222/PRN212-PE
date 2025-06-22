@@ -11,17 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TranVanTungWPF.ViewModels;
 
 namespace TranVanTungWPF.Views
 {
-    /// <summary>
-    /// Interaction logic for AdminDashboard.xaml
-    /// </summary>
     public partial class AdminDashboard : Window
     {
         public AdminDashboard()
         {
             InitializeComponent();
+            DataContext = new AdminViewModel();
         }
     }
 }

@@ -17,5 +17,7 @@ namespace FUMiniHotelSystem.BLL.Services
         List<Customer> GetAllCustomers();
         List<Customer> SearchCustomers(string searchTerm);
         bool ValidateCustomer(Customer customer, out List<string> errors);
+        void AddCustomer(object customer);
+        void UpdateCustomer(object customer);
     }
 }
