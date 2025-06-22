@@ -1,6 +1,7 @@
 ﻿using FUMiniHotelSystem.DAL.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace FUMiniHotelSystem.DAL.Data
 {
@@ -12,6 +13,8 @@ namespace FUMiniHotelSystem.DAL.Data
         public List<Customer> Customers { get; set; }
         public List<RoomType> RoomTypes { get; set; }
         public List<RoomInformation> Rooms { get; set; }
+        public List<BookingReservation> BookingReservations { get; set; }
+        public List<BookingDetail> BookingDetails { get; set; }
 
         private DataContext()
         {
@@ -59,6 +62,22 @@ namespace FUMiniHotelSystem.DAL.Data
                 new Customer { CustomerID = 1, CustomerFullName = "Nguyen Van A", Telephone = "0123456789", EmailAddress = "nguyenvana@email.com", CustomerBirthday = new DateTime(1990, 1, 1), CustomerStatus = 1, Password = "123456" },
                 new Customer { CustomerID = 2, CustomerFullName = "Tran Thi B", Telephone = "0987654321", EmailAddress = "tranthib@email.com", CustomerBirthday = new DateTime(1985, 5, 15), CustomerStatus = 1, Password = "123456" }
             };
+
+            // Initialize Booking Reservations
+            BookingReservations = new List<BookingReservation>
+            {
+                new BookingReservation { BookingReservationID = 1, BookingDate = DateTime.Now.AddDays(-30), TotalPrice = 1500000, CustomerID = 1, BookingStatus = 3 },
+                new BookingReservation { BookingReservationID = 2, BookingDate = DateTime.Now.AddDays(-15), TotalPrice = 2400000, CustomerID = 1, BookingStatus = 3 },
+                new BookingReservation { BookingReservationID = 3, BookingDate = DateTime.Now.AddDays(-5), TotalPrice = 800000, CustomerID = 2, BookingStatus = 1 }
+            };
+
+            // Initialize Booking Details
+            BookingDetails = new List<BookingDetail>
+            {
+                new BookingDetail { BookingReservationID = 1, RoomID = 1, StartDate = DateTime.Now.AddDays(-30), EndDate = DateTime.Now.AddDays(-27), ActualPrice = 500000 },
+                new BookingDetail { BookingReservationID = 2, RoomID = 3, StartDate = DateTime.Now.AddDays(-15), EndDate = DateTime.Now.AddDays(-12), ActualPrice = 800000 },
+                new BookingDetail { BookingReservationID = 3, RoomID = 2, StartDate = DateTime.Now.AddDays(-5), EndDate = DateTime.Now.AddDays(-4), ActualPrice = 550000 }
+            };
         }
 
         public int GetNextCustomerId()
@@ -74,6 +93,11 @@ namespace FUMiniHotelSystem.DAL.Data
         public int GetNextRoomTypeId()
         {
             return RoomTypes.Any() ? RoomTypes.Max(rt => rt.RoomTypeID) + 1 : 1;
+        }
+
+        public int GetNextBookingId()
+        {
+            return BookingReservations.Any() ? BookingReservations.Max(br => br.BookingReservationID) + 1 : 1;
         }
     }
 }

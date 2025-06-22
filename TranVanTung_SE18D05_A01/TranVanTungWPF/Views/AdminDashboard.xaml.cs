@@ -19,5 +19,12 @@ namespace TranVanTungWPF.Views
 
             DataContext = new AdminViewModel(customerService, roomService);
         }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }

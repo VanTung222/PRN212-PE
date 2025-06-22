@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TranVanTungWPF.Views.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FU Mini Hotel System - Login" Height="400" Width="500"
+        Title="FU Mini Hotel System - Login" Height="422" Width="500"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>

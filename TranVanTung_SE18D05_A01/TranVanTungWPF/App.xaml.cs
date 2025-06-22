@@ -8,7 +8,9 @@ namespace TranVanTungWPF
         {
             base.OnStartup(e);
 
+            // Chỉ tạo 1 LoginWindow duy nhất
             var loginWindow = new Views.LoginWindow();
+            MainWindow = loginWindow;
             loginWindow.Show();
         }
     }
